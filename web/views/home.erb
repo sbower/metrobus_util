@@ -1,0 +1,33 @@
+<form name="route_form" method="post" action"/" >
+  <select name='route_id' onchange="this.form.submit()">
+    <% bus_routes.each do |bus_route| %>
+      <option value="<%= bus_route.route %>" <% if route_id.eql?(bus_route.route) %>selected<%end%>><%=bus_route.description%></option>
+    <% end %>
+  </select>
+  <br>
+
+  <% if directions then %>
+  <select name='direction_id' onchange="this.form.submit()">
+    <% directions.each do |direction| %>
+      <option value="<%= direction.direction_id%>" <% if direction_id.eql?(direction.direction_id) %>selected<%end%>><%= direction.direction_name%></option>
+    <% end %>
+  </select>
+  <br>
+  <% end %>
+
+  <% if stops then %>
+  <select name='stop_id' onchange="this.form.submit()">
+    <% stops.each do |stop| %>
+      <option value="<%= stop.stop_id %>" <% if stop_id.eql?(stop.stop_id) %>selected<%end%>><%=stop.stop_name%></option>
+    <% end %>
+  </select>
+  <br><br>
+  <% end %>
+  <% if departure_text then %>
+    <br>
+    &nbsp;<%= departure_text %>
+    <br>
+  <% end %>
+  <br>
+  <input type="submit">
+</form>
