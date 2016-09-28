@@ -2,7 +2,7 @@
 
 Command line utility to tell you how long it is until
 the next bus on given route leaving from a given bus stop
-going a given direction.  The bulk of the logic is contained a gem which
+going a given direction.  The bulk of the logic is contained in a gem which
 can be found here: https://github.com/sbower/metrobus.
 
 ## Installation
